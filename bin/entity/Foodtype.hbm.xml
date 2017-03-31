@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-30 23:46:10 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="entity.Foodtype" table="FOODTYPE">
+        <id name="foodtypeID" type="int">
+            <column name="FOODTYPEID" />
+            <generator class="increment" />
+        </id>
+        <property name="typeName" type="java.lang.String">
+            <column name="TYPENAME" />
+        </property>
+        <set name="typelink" table="TYPELINK" inverse="true" lazy="true" cascade="all">
+            <key>
+                <column name="FOODTYPEID" />
+            </key>
+            <one-to-many class="entity.TypeLink" />
+        </set>
+    </class>
+</hibernate-mapping>

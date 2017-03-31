@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-30 23:46:10 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="entity.User" table="USER">
+        <id name="userID" type="int">
+            <column name="USERID" />
+             <generator class="increment" />
+        </id>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="username" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <set name="likeFood" table="FOOD" inverse="true" lazy="true" cascade="all">
+            <key>
+                <column name="USERID" />
+            </key>
+            <one-to-many class="entity.Food" />
+        </set>
+        <set name="dislikeFood" table="FOOD" inverse="false" lazy="true" cascade="all">
+            <key>
+                <column name="USERID" />
+            </key>
+            <one-to-many class="entity.Food" />
+        </set>
+    </class>
+</hibernate-mapping>
