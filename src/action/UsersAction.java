@@ -1,5 +1,8 @@
 package action;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 import org.apache.struts2.interceptor.validation.SkipValidation;
 
 import service.UsersDAO;
@@ -14,6 +17,17 @@ public class UsersAction extends SuperAction implements ModelDriven<Users> {
 	private Users user= new Users();
 	
 	private static final long serialVersionUID = 1L;
+	
+    //添加学生动作
+    public String register() throws ParseException
+    {
+    	UsersDAO udao = new UsersDAOImpl();
+    	Users u = new Users();
+    	u.setUserName(request.getParameter("userName"));
+    	u.setPassword(request.getParameter("password"));
+    	udao.usersRegister(u);
+    	return "register_success";
+    }
 	
 	//用户登录动作
 	public String login(){

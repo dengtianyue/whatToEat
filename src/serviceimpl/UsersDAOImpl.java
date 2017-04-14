@@ -48,5 +48,29 @@ public class UsersDAOImpl implements UsersDAO {
 			}
 		}
 	}
-
+	
+	public boolean usersRegister(Users u) {
+		
+		//事务对象
+		Transaction tx = null;
+		String hql = "";
+		try{
+			Session session = MyHibernateSessionFactory.getSessionFactory().getCurrentSession();
+			tx = session.beginTransaction();
+			session.save(u);
+			tx.commit();//提交事务
+				return true;
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+			return false;
+		}
+		finally
+		{
+			if(tx!=null){
+				tx=null;
+			}
+		}
+	}
 }
