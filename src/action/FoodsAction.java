@@ -40,7 +40,7 @@ public class FoodsAction extends SuperAction {
     	//放进session中
     	if(list!=null&&list.size()>0)
     	{
-    		session.setAttribute("DislikeFoods_list", list);
+    		session.setAttribute("LikeFoods_list", list);
     	}
     	return "queryLikeFoods_success";
     }

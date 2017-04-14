@@ -7,4 +7,6 @@ public interface UsersDAO {
 	
 	//用户登录方法
 	public boolean usersLogin(Users u);
+	//用户注册方法
+	public boolean usersRegister(Users u);
 }

@@ -2,5 +2,5 @@
 <%
   String path = request.getContextPath();
   String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-  response.sendRedirect(path+"/users/Test.jsp");
+  response.sendRedirect(path+"/users/Users_login.jsp");
 %>
