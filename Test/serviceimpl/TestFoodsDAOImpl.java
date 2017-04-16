@@ -7,6 +7,7 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 import entity.Foods;
+import entity.Likelist;
 import entity.Users;
 import service.FoodsDAO;
 
@@ -75,5 +76,15 @@ public class TestFoodsDAOImpl {
 		
 		System.out.println("已添加编号为"+fid+"的菜品至喜欢");
 		Assert.assertEquals(true, fdao.addLikeList(fid, uid));
+	}
+	
+	@Test
+	public void testDeleteLikeFoods()
+	{
+		int uid = 1 ;
+		int fid = 2 ;
+		FoodsDAO fdao = new FoodsDAOImpl();
+		System.out.println("已删除至喜欢的编号为"+fid+"的菜品");
+		Assert.assertEquals(true, fdao.deleteLikeList(fid, uid));
 	}
 }

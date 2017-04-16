@@ -34,7 +34,6 @@ public class UsersAction extends SuperAction implements ModelDriven<Users> {
 		UsersDAO udao = new UsersDAOImpl();
 		if(udao.usersLogin(user))
 		{
-			System.out.println("user的name为"+user.getUserName());
 			//在session中保留登录成功的用户名
 			session.setAttribute("loginUserName", user.getUserName());
 			return "login_success";

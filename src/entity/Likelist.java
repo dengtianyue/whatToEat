@@ -50,4 +50,12 @@ public class Likelist implements java.io.Serializable {
 		this.users = users;
 	}
 
+	@Override
+	public String toString() {
+		return "Likelist [lid=" + lid + ", foods=" + foods + ", users=" + users
+				+ "]";
+	}
+
+	
+	
 }

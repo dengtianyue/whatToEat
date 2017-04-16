@@ -25,8 +25,10 @@ public class FoodsDAOImpl implements FoodsDAO {
 			tx = session.beginTransaction();
 			//hql="select Foods.foodName from Foods , Likelist where Likelist.uid ="+uid+"AND Likelist.fid = Foods.fid";
 			//hql="select Foods.foodName from Foods ";
-			hql="select foodName from Foods,Likelist where Likelist.Uid = '"+uid+"'AND Likelist.Fid = Foods.Fid";
-			Query query = session.createSQLQuery(hql);
+			//hql="select foodName from Foods,Likelist where Likelist.Uid = '"+uid+"'AND Likelist.Fid = Foods.Fid";
+			hql="select l.foods from Likelist l LEFT OUTER JOIN  l.foods where l.users.uid='"+uid+"'";
+			// where Likelist.users.Uid = '"+uid+"'
+			Query query = session.createQuery(hql);
 			list = query.list();
 			tx.commit();
 			return list;
@@ -54,8 +56,10 @@ public class FoodsDAOImpl implements FoodsDAO {
 			tx = session.beginTransaction();
 			//hql="select Foods.foodName from Foods , Likelist where Likelist.uid ="+uid+"AND Likelist.fid = Foods.fid";
 			//hql="select Foods.foodName from Foods ";
-			hql="select foodName from Foods,Dislikelist where Dislikelist.Uid = '"+uid+"'and Dislikelist.Fid = Foods.Fid";
-			Query query = session.createSQLQuery(hql);
+			
+			//明天试试直接返回 Foods from ...
+			hql="select d.foods from Dislikelist d LEFT OUTER JOIN  d.foods where d.users.uid='"+uid+"'";
+			Query query = session.createQuery(hql);
 			list = query.list();
 			tx.commit();
 			return list;
@@ -233,13 +237,20 @@ public class FoodsDAOImpl implements FoodsDAO {
 			String hql = "";
 			String a = foodName;
 			List<Integer> list = null;
+			System.out.println("=====================选择的菜品名称为:"+foodName);
 			try{
 				Session session = MyHibernateSessionFactory.getSessionFactory().getCurrentSession();
 				tx = session.beginTransaction();
 				hql = "select fid from Foods where foodName = '"+a+"'";
 				Query query = session.createQuery(hql);
 				list = query.list();
-				f =  (Foods) session.get(Foods.class,list.get(0));
+				 System.out.println("--------------------------------------");
+				for(int i =0;i<list.size();i++)
+				 {
+					 System.out.println("--------------------------------------");
+					 System.out.println(list.get(i));
+				 }
+				f =  (Foods) session.get(Foods.class, list.get(0));
 				tx.commit();
 				return f;
 			}
@@ -264,8 +275,15 @@ public class FoodsDAOImpl implements FoodsDAO {
 		try{
 			Session session = MyHibernateSessionFactory.getSessionFactory().getCurrentSession();
 			tx = session.beginTransaction();
-			hql="SELECT FoodName FROM Foods where Foods.fid not in(SELECT Dislikelist.fid from Dislikelist where Dislikelist.uid = '"+uid+"')ORDER BY  RAND() LIMIT 6";
-			Query query = session.createSQLQuery(hql);
+			//hql="select l.foods from Likelist l LEFT OUTER JOIN  l.foods where l.users.uid='"+uid+"'";
+			
+			
+			hql="FROM Foods where fid not in"
+					+ "(SELECT d.foods.fid from Dislikelist as d LEFT OUTER JOIN d.foods where d.users.uid = '"+uid+"')"
+							+ "ORDER BY  RAND()";
+			Query query = session.createQuery(hql);
+			query.setMaxResults(6);
+			query.setFirstResult(0);
 			list = query.list();
 			tx.commit();
 			return list;

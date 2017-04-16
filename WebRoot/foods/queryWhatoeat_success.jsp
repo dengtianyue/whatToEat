@@ -9,25 +9,80 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html lang="zh-CN">
 <head>
 	<meta charset="UTF-8">
-	<title>今天吃什么</title>
+	<title>吃什么 | whatoeat</title>
+	<meta name="viewport" content="width=device-width max-scale=1 min-scale=1 user-scale=no">
+	<!-- <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-	
-	
+	<!-- 顶栏 -->
+	<header>
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+				<a href="/" class="navbar-brand">吃什么</a>
+				<button type="button" class="navbar-toggle" data-toggle='collapse' data-target='#nav'>
+					<span class="sr-only">切换导航</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div id="nav" class="collapse navbar-collapse">
+			<!-- 	<ul class="nav navbar-nav">
+					<li><a href="#">吃</a></li>
+					<li><a href="#">什</a></li>
+					<li><a href="#">么</a></li>
+				
+				</ul> -->
+				<ul class="nav navbar-nav pull-right">
+                      <li><a href="<%=path%>/foods/Foods_queryLikeFoods.action">喜欢</a></li>
+                      <li><a href="<%=path%>/foods/Foods_queryDislikeFoods.action">不喜欢</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- 顶栏结束 -->
+	<!-- 轮播 -->
+<!-- 	<div class="carousel slide">
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="http://img.hb.aicdn.com/509a89e818298c0a41a556c4bf013e963710e94cc7387-XweFQW_fw658" alt="">
+			</div>
+		</div>
+	</div> -->
+	<!-- 轮播结束 -->
 
-	<div class="user">
-		<span>username</span>
-		<a href="<%=path%>/foods/Foods_queryLikeFoods.action">喜欢</a>
-		<a href="<%=path%>/foods/Foods_queryDislikeFoods.action">不喜欢</a>
+	<!-- 主页面 -->
+	<div id="particles-js" class="container">
+		<button class="center-block btn btn-lg btn-primary">今天吃什么</button>
+
+		<!-- 结果（推荐）容器 -->
+		<div class="result">
+			<ul>
+			<s:iterator value="#session.Whatoeat_list" var="qfood">
+				<li>
+				<td><s:property value="#qfood.foodName"/></td>
+				<td><a href="<%=path%>/foods/Foods_addLikeFoods.action?foodName=<s:property value="#qfood.foodName"/>">喜欢</a></td>
+				<td><a href="<%=path%>/foods/Foods_addDislikeFoods.action?foodName=<s:property value="#qfood.foodName"/>">不喜欢</a></td>
+				</li>
+			</s:iterator>
+			<!-- 遍历结束 -->
+			</ul>
+
+		</div>
+		<!-- 结果（推荐）结束 -->
 	</div>
-	
-	<!-- 遍历开始 -->
-	<s:iterator value="#session.Whatoeat_list" var="qfood">
-	<tr class="qfood">
-		<td><s:property value="#qfood"/></td>
-	</tr>
-	</s:iterator>
-	<!-- 遍历结束 -->
-	<button><a href="<%=path%>/foods/Foods_queryWhatoeat.action">再来一次</button>
+	<!-- 主页面结束 -->
+	<div class="sticky"></div>
+	<footer>Created By <a href="https://github.com/dengtianyue/">Dengtianyue</a> &amp; <a href="https://github.com/namelessman/">namelessman</a></footer>
+
+
+	<!-- JavaScript -->
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<script type="text/javascript" src='../js/bootstrap.js'></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+	<script type="text/javascript" src="../js/index.js"></script>
+
 </body>
 </html>

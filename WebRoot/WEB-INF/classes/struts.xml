@@ -28,4 +28,12 @@
 		<result name="deleteDislikeFoods_success" type = "chain">Foods_queryDislikeFoods</result>
 	</action>
 </package>
+
+
+<package name="queryfoods" namespace="/queryfoods" extends="json-default">
+	<action name="*_*" class="action.{1}Action" method = "{2}">
+		<result name="queryWhatoeat_success" type = "json"></result>
+	</action>
+</package>
+
 </struts>    

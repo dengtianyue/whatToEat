@@ -22,7 +22,7 @@
             </key>
             <one-to-many class="entity.Dislikelist" />
         </set>
-        <set name="likelists" inverse="true">
+        <set name="likelists" inverse="true" > 
             <key>
                 <column name="Fid" />
             </key>

@@ -3,6 +3,7 @@ package service;
 import java.util.List;
 
 import entity.Foods;
+import entity.Likelist;
 import entity.Users;
 
 //菜品的业务逻辑接口

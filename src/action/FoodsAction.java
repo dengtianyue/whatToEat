@@ -25,6 +25,10 @@ public class FoodsAction extends SuperAction {
     	{
     		session.setAttribute("Whatoeat_list", list);
     	}
+    	/*for(int i =0;i<list.size();i++)
+    	{
+    		System.out.println(list.toString());
+    	}*/
     	return "queryWhatoeat_success";
     }
 	
@@ -67,7 +71,7 @@ public class FoodsAction extends SuperAction {
     {
     	FoodsDAO fdao = new FoodsDAOImpl();
     	String uname = (String) session.getAttribute("loginUserName");
-    	String fname = (String) session.getAttribute("selectFoodName");
+    	String fname = (String) request.getParameter("foodName");
     	Users u = fdao.queryUsersByUsername(uname);
     	Foods f = fdao.queryFoodsByFoodsname(fname);
     	//String fid = request.getParameter("fid");
@@ -81,7 +85,7 @@ public class FoodsAction extends SuperAction {
     {
     	FoodsDAO fdao = new FoodsDAOImpl();
     	String uname = (String) session.getAttribute("loginUserName");
-    	String fname = (String) session.getAttribute("selectFoodName");
+    	String fname = (String) request.getParameter("foodName");
     	Users u = fdao.queryUsersByUsername(uname);
     	Foods f = fdao.queryFoodsByFoodsname(fname);
     	//String fid = request.getParameter("fid");
@@ -90,11 +94,11 @@ public class FoodsAction extends SuperAction {
     }
     
     //实现删除喜欢菜品动作
-    public String deleteLikeList()
+    public String deleteLikelist()
     {
     	FoodsDAO fdao = new FoodsDAOImpl();
+    	String fname = (String) request.getParameter("foodName");
     	String uname = (String) session.getAttribute("loginUserName");
-    	String fname = (String) session.getAttribute("selectFoodName");
     	Users u = fdao.queryUsersByUsername(uname);
     	Foods f = fdao.queryFoodsByFoodsname(fname);
     	fdao.deleteLikeList(f.getFid(), u.getUid());
@@ -106,7 +110,7 @@ public class FoodsAction extends SuperAction {
     {
     	FoodsDAO fdao = new FoodsDAOImpl();
     	String uname = (String) session.getAttribute("loginUserName");
-    	String fname = (String) session.getAttribute("selectFoodName");
+    	String fname = (String) request.getParameter("foodName");
     	Users u = fdao.queryUsersByUsername(uname);
     	Foods f = fdao.queryFoodsByFoodsname(fname);
     	fdao.deleteDislikeList(f.getFid(), u.getUid());
