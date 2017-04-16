@@ -1,3 +1,10 @@
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -5,8 +12,8 @@
 	<title>吃什么 | whatoeat</title>
 	<meta name="viewport" content="width=device-width max-scale=1 min-scale=1 user-scale=no">
 	<!-- <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
 	<!-- 顶栏 -->
@@ -29,8 +36,8 @@
 				
 				</ul> -->
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="">登录</a></li>
-					<li><a href="">注册</a></li>
+					<li><a href="<%=path%>/foods/Foods_queryLikeFoods.action">喜欢</a></li>
+					<li><a href="<%=path%>/foods/Foods_queryDislikeFoods.action">不喜欢</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -52,33 +59,27 @@
 
 		<!-- 结果（推荐）容器 -->
 		<div class="result">
+<<<<<<< HEAD:static/main.html
 			<ul>
 				<li>红烧肉
-					<ul>
-						<li class="like">喜欢</li>
-						<li class="dislike">不喜欢</li>
-					</ul>
+					<div><span class="glyphicon glyphicon-heart-empty"></span>喜欢</div>
+					<div>不喜欢</div>
 				</li>
-				<li>油焖笋
-					<ul>
-						<li class="like">喜欢</li>
-						<li class="dislike">不喜欢</li>
-					</ul>
-				</li>
-				<li>香椿炒蛋
-					<ul>
-						<li class="like">喜欢</li>
-						<li class="dislike">不喜欢</li>
-					</ul>
-				</li>
-				<li>锅包肉
-					<ul>
-						<li class="like">喜欢</li>
-						<li class="dislike">不喜欢</li>
-					</ul>
-				</li>
+=======
+			<!-- <ul>
+				<li>红烧肉</li>
+>>>>>>> upstream/master:WebRoot/foods/queryWhatoeat_success3.jsp
+				<li>油焖笋</li>
+				<li>香椿炒蛋</li>
+				<li>锅包肉</li>
+			</ul> -->
+			<!-- 遍历开始 -->
+			<ul>
+			<s:iterator value="#session.Whatoeat_list" var="qfood">
+				<li><s:property value="#qfood.foodName"/></li>
+			</s:iterator>
+			<!-- 遍历结束 -->
 			</ul>
-
 		</div>
 		<!-- 结果（推荐）结束 -->
 	</div>
@@ -89,9 +90,10 @@
 
 	<!-- JavaScript -->
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
-	<script type="text/javascript" src='js/bootstrap.js'></script>
+	<script type="text/javascript" src='../js/bootstrap.js'></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="../js/index.js"></script>
 
 </body>
 </html>
+
