@@ -1,15 +1,3 @@
-var btn=$('.container .btn');
-var resultContainer=$('.result');
-
-btn.click(function (e) {
-	$(this).animate({top:'10%',marginLeft:'-53px',opacity:'0'},2000,function(){
-			resultContainer.fadeIn(3000,function(){
-				btn.text('再来一次').animate({opacity:'1'},2000);
-		});
-	})
-})
-
-
 // 引入particle
 
 /* ---- particles.js config ---- */
