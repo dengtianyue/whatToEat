@@ -49,8 +49,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<input id="password" value="" name="password" type="password" class="password form-control x319 in">
 					</div>
 					<div class="form-group space">
-						<label class="t"></label>　　　
+						<label class="r"></label>　　　
 						<button type="submit"  id="submit_btn" class="btn btn-primary btn-lg">&nbsp;确&nbsp;认&nbsp;</button>
+						<li>已有账号?</li>&nbsp;<a href="<%=path%>/users/Users_login.jsp"><li>马上登录</li></a>
 					</div>
                               <div>
                                      <s:fielderror/> <!-- 显示表单验证的出错信息 -->

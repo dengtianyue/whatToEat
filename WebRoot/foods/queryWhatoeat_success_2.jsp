@@ -29,31 +29,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</button>
 			</div>
 			<div id="nav" class="collapse navbar-collapse">
-			<!-- 	<ul class="nav navbar-nav">
-					<li><a href="#">吃</a></li>
-					<li><a href="#">什</a></li>
-					<li><a href="#">么</a></li>
-				
-				</ul> -->
+
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="<%=path%>/foods/Foods_queryLikeFoods.action">喜欢</a></li>
-					<li><a href="<%=path%>/foods/Foods_queryDislikeFoods.action">不喜欢</a></li>
+                      <li><a href="<%=path%>/foods/Foods_queryLikeFoods.action">喜欢</a></li>
+                      <li><a href="<%=path%>/foods/Foods_queryDislikeFoods.action">不喜欢</a></li>
 				</ul>
 			</div>
 		</nav>
 	</header>
 
-	<table class="default" width="100%">
-	<tr class="title">
-		<td>菜名</td>
-	</tr>
-	<!-- 遍历开始 -->
-	<s:iterator value="#session.Whatoeat_list" var="qfood">
-		<td><s:property value="#qfood.foodName"/></td>
-	</s:iterator>
-	</table>
-	
-	
+	<!-- 主页面 -->
+	<div id="particles-js" class="container">
+		<button class="center-block btn btn-lg btn-primary">今天吃什么</button>
+
+		<div class="result">
+			<ul>
+			<s:iterator value="#session.Whatoeat_list" var="qfood">
+				<li><s:property value="#qfood.foodName"/>
+					<ul>
+						<a href="<%=path%>/foods/Foods_addLikeFoods.action?foodName=<s:property value="#qfood.foodName"/>"><li class="like">喜欢</li></a>
+						<a href="<%=path%>/foods/Foods_addDislikeFoods.action?foodName=<s:property value="#qfood.foodName"/>"><li class="dislike">不喜欢</li></a>
+					</ul>
+				</li>
+			</s:iterator>
+			</ul>
+
+
+		</div>
+		<!-- 结果（推荐）结束 -->
+	</div>
+	<!-- 主页面结束 -->
 	<div class="sticky"></div>
 	<footer>Created By <a href="https://github.com/dengtianyue/">Dengtianyue</a> &amp; <a href="https://github.com/namelessman/">namelessman</a></footer>
 
@@ -66,4 +71,3 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 </body>
 </html>
-

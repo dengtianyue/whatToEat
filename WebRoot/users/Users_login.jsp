@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="form-group space">
 						<label class="t"></label>　　　
 						<button type="submit"  id="submit_btn" class="btn btn-primary btn-lg">&nbsp;登&nbsp;录&nbsp;</button>
-						<button type="button"  id="submit_btn" class="btn btn-primary btn-lg"><a href="<%=path%>/users/Users_register.jsp">&nbsp;注&nbsp;册&nbsp;</a></button>
+						<a href="<%=path%>/users/Users_register.jsp"><button type="button"  id="submit_btn" class="btn btn-primary btn-lg">&nbsp;注&nbsp;册&nbsp;</button></a>
 					</div>
                               <div>
                                      <s:fielderror/> <!-- 显示表单验证的出错信息 -->

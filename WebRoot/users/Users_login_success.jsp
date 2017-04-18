@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<header>
 		<nav class="navbar navbar-default">
 			<div class="navbar-header">
-				<a href="/" class="navbar-brand">吃什么</a>
+				<a href="/users/Users_login_success.jsp" class="navbar-brand">吃什么</a>
 				<button type="button" class="navbar-toggle" data-toggle='collapse' data-target='#nav'>
 					<span class="sr-only">切换导航</span>
 					<span class="icon-bar"></span>
@@ -63,7 +63,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 	<script type="text/javascript" src='../js/bootstrap.js'></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-	<!-- <script type="text/javascript" src="js/index.js"></script> -->
+	<script type="text/javascript" src='../js/myparticles.js'></script>
 
 </body>
 </html>

@@ -19,5 +19,6 @@ body{
 .login_box .form-control.x164 {width: 177px;}
 .login_box .form-group {margin-bottom: 25px;}
 .login_box .form-group label.t {padding-left:24.5px;  cursor: pointer;}
+.login_box .form-group label.r {padding-left:24.5px;  cursor: pointer;}
 .login_box .form-group.space {padding-left:55px; padding-top: 10px; border-top: 1px #FFF dotted;}
 .login_box .form-group img {margin-top: 1px; height: 32px; vertical-align: top;}

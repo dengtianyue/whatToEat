@@ -12,6 +12,7 @@
 		<result name="login_success">/users/Users_login_success.jsp</result>
 		<result name="register_success">/users/Users_login_success.jsp</result>
 		<result name="login_failure">/users/Users_login.jsp</result>
+		<result name="register_failure">/users/Users_register.jsp</result>
 		<result name="logout_success">/users/Users_login.jsp</result>
 		 <result name="input">/users/Users_login.jsp</result>
 	</action>
@@ -22,10 +23,10 @@
 		<result name="queryWhatoeat_success">/foods/queryWhatoeat_success.jsp</result>
 		<result name="queryLikeFoods_success">/foods/queryLikeFoods_success.jsp</result>
 		<result name="queryDislikeFoods_success">/foods/queryDislikeFoods_success.jsp</result>
-		<result name="addLikeFoods_success" type = "chain">Foods_queryLikeFoods</result>
-		<result name="addDislikeFoods_success" type = "chain">Foods_queryDislikeFoods</result>
-		<result name="deleteLikeFoods_success" type = "chain">Foods_queryLikeFoods</result>
-		<result name="deleteDislikeFoods_success" type = "chain">Foods_queryDislikeFoods</result>
+		<result name="addLikeFoods_success" >/foods/queryWhatoeat_success.jsp</result>
+		<result name="addDislikeFoods_success" >/foods/queryWhatoeat_success.jsp</result>
+		<result name="deleteLikeFoods_success" >/foods/queryWhatoeat_success.jsp</result>
+		<result name="deleteDislikeFoods_success" >/foods/queryWhatoeat_success.jsp</result>
 	</action>
 </package>
 

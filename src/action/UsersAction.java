@@ -25,8 +25,15 @@ public class UsersAction extends SuperAction implements ModelDriven<Users> {
     	Users u = new Users();
     	u.setUserName(request.getParameter("userName"));
     	u.setPassword(request.getParameter("password"));
-    	udao.usersRegister(u);
-    	return "register_success";
+    	if(udao.usersRegister(u))
+    	{
+        	session.setAttribute("loginUserName", u.getUserName());
+        	return "register_success";
+    	}
+    	else
+    	{
+    		return "register_failure";
+    	}
     }
 	
 	//用户登录动作
