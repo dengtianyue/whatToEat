@@ -16,7 +16,21 @@
 * 菜谱推送
 ## 一期的数据库ER图
 
-![数据库ER图](https://github.com/dengtianyue/somePhotos/blob/master/Hibernate%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/eatER.png?raw=true)
+![数据库ER图](https://github.com/dengtianyue/whatToEat/blob/master/whatoeat.png?raw=true)
 
 ## 前端
 前端使用Bootstrap、jQuery框架和particles.js插件。
+
+
+## 2017/4/18更新 一期功能基本开发完毕
+### 功能包括:
+* 用户注册登录
+* 菜品推荐
+* 收藏菜品
+* 不喜欢菜品
+
+### 下一版本预想:
+1. 用户不需登录即可抽取菜品
+2. 添加食物图片
+3. 对用户喜欢的菜品加权推荐
+4. 可让用户先挑选 特别想吃 如蛋类/鸡类 在推荐中必然推送
