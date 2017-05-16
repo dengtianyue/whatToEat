@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 
 <meta charset="utf-8">
-<title>今天吃什么~~</title>
+<title>今天吃什么</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -27,6 +27,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="../js/jquery.form.js"></script>
 <script type="text/javascript" src="../js/tooltips.js"></script>
 <!--<script type="text/javascript" src="../js/login.js"></script>-->
+
+<style type="text/css">
+	.login_box .form-group.space{
+		padding-left:0;
+	}
+	.login_box .form-group.space button{
+		margin-left:-42px;
+	}
+</style>
+
 </head>
 
 <body>
@@ -35,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="main_box">
 		<div class="login_box">
 			<div class="login_logo">
-				今天吃什么~~~
+				今天吃什么
 			</div>
 
 			<div class="login_form">
@@ -48,10 +58,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<label for="j_password" class="t">密　码：</label>
 						<input id="password" value="" name="password" type="password" class="password form-control x319 in">
 					</div>
-					<div class="form-group space">
-						<label class="r"></label>　　　
+					<div class="form-group space text-center">
+						　　　
 						<button type="submit"  id="submit_btn" class="btn btn-primary btn-lg">&nbsp;确&nbsp;认&nbsp;</button>
-						<li>已有账号?</li>&nbsp;<a href="<%=path%>/users/Users_login.jsp"><li>马上登录</li></a>
+						<p class='text-center small'>已有账号?&nbsp;<a href="<%=path%>/users/Users_login.jsp">马上登录 </a></p>
 					</div>
                               <div>
                                      <s:fielderror/> <!-- 显示表单验证的出错信息 -->

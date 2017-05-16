@@ -21,6 +21,7 @@
 <package name="foods" namespace="/foods" extends="struts-default">
 	<action name="*_*" class="action.{1}Action" method = "{2}">
 		<result name="queryWhatoeat_success">/foods/queryWhatoeat_success.jsp</result>
+		<result name="queryWhatoeat2_success">/foods/queryWhatoeat_success2.jsp</result>
 		<result name="queryLikeFoods_success">/foods/queryLikeFoods_success.jsp</result>
 		<result name="queryDislikeFoods_success">/foods/queryDislikeFoods_success.jsp</result>
 		<result name="addLikeFoods_success" >/foods/queryWhatoeat_success.jsp</result>

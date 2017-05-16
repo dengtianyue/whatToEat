@@ -300,5 +300,35 @@ public class FoodsDAOImpl implements FoodsDAO {
 			}
 		}
 	}
+
+	@Override
+	public List<Foods> queryWhatoeat2() {
+		Transaction tx = null;
+		List<Foods> list = null;
+		String hql = "";
+		try{
+			Session session = MyHibernateSessionFactory.getSessionFactory().getCurrentSession();
+			tx = session.beginTransaction();
+			//hql="select l.foods from Likelist l LEFT OUTER JOIN  l.foods where l.users.uid='"+uid+"'";
+			hql="FROM Foods ORDER BY  RAND()";
+			Query query = session.createQuery(hql);
+			query.setMaxResults(6);
+			query.setFirstResult(0);
+			list = query.list();
+			tx.commit();
+			return list;
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			return list;
+		}
+		finally
+		{
+			if(tx!=null)
+			{
+				tx=null;
+			}
+		}
+	}
 	
 }

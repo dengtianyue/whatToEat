@@ -13,7 +13,8 @@
 			jdbc:mysql://localhost:3306/whatoeat
 		</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password">dty1013@</property>
+	<!--  <property name="connection.password">JWM4jZVK5mIc</property>-->
+		<property name="connection.password">dty1013@</property> 
 		<property name="connection.driver_class">
 			com.mysql.jdbc.Driver
 		</property>

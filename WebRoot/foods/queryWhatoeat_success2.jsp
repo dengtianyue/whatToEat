@@ -36,9 +36,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 				</ul> -->
 				<ul class="nav navbar-nav pull-right">
-					<li><a>${sessionScope.loginUserName}</a></li>
-                      		<li><a href="<%=path%>/foods/Foods_queryLikeFoods.action">喜欢</a></li>
-                      		<li><a href="<%=path%>/foods/Foods_queryDislikeFoods.action">不喜欢</a></li>
+					<li><a>用户名</a></li>
+                      		<li><a href="<%=path%>/users/Users_login.jsp">登录</a></li>
+                      		<li><a href="<%=path%>/users/Users_register.jsp">注册</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -56,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<!-- 主页面 -->
 	<div id="particles-js" class="container">
-		<a href="<%=path%>/foods/Foods_queryWhatoeat.action"><button class="center-block btn btn btn-primary">再来一次</button></a>
+		<a href="<%=path%>/foods/Foods_queryWhatoeat2.action"><button class="center-block btn btn btn-primary">再来一次</button></a>
 
 		<!-- 结果（推荐）容器 -->
 		<div class="result">
@@ -64,8 +64,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<s:iterator value="#session.Whatoeat_list" var="qfood">
 				<li><s:property value="#qfood.foodName"/>
 					<ul>
-						<a href="<%=path%>/foods/Foods_addLikeFoods.action?foodName=<s:property value="#qfood.foodName"/>"><li class="like">喜欢</li></a>
-						<a href="<%=path%>/foods/Foods_addDislikeFoods.action?foodName=<s:property value="#qfood.foodName"/>"><li class="dislike">不喜欢</li></a>
+						<a href="<%=path%>/users/Users_login.jsp"><li class="like">喜欢</li></a>
+						<a href="<%=path%>/users/Users_login.jsp"><li class="dislike">不喜欢</li></a>
 					</ul>
 				</li>
 			</s:iterator>

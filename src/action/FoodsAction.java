@@ -31,6 +31,19 @@ public class FoodsAction extends SuperAction {
     	}*/
     	return "queryWhatoeat_success";
     }
+    
+    //实现随机推荐菜品的动作(未登录)
+    public String queryWhatoeat2()
+    {
+    	FoodsDAO fdao = new FoodsDAOImpl();
+    	List<Foods> list = fdao.queryWhatoeat2();
+    	//放进session中
+    	if(list!=null&&list.size()>0)
+    	{
+    		session.setAttribute("Whatoeat_list", list);
+    	}
+    	return "queryWhatoeat2_success";
+    }
 	
 	//实现查询喜欢菜品的动作
     public String queryLikeFoods()

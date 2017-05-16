@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="main_box">
 		<div class="login_box">
 			<div class="login_logo">
-				今天吃什么~~~
+				今天吃什么
 			</div>
 
 			<div class="login_form">

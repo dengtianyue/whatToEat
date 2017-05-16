@@ -16,7 +16,7 @@
 * 菜谱推送
 ## 一期的数据库ER图
 
-![数据库ER图](https://github.com/dengtianyue/somePhotos/blob/master/Hibernate%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/eatER.png?raw=true)
+![数据库ER图](https://github.com/dengtianyue/whatToEat/blob/master/whatoeat.png?raw=true)
 
 ## 前端
 前端使用Bootstrap、jQuery框架和particles.js插件。

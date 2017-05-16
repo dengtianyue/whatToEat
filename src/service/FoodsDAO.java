@@ -11,6 +11,8 @@ public interface FoodsDAO
 {
 	//随机挑选菜品
 	public List<Foods>queryWhatoeat(int uid);
+	//随机挑选菜品(无登录)
+	public List<Foods>queryWhatoeat2();
 	//查询用户喜欢吃的菜
 	public List<Foods>queryLikeList(int uid);
 	//查询用户不喜欢吃的菜
